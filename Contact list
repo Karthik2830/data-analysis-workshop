@@ -1,0 +1,25 @@
+contacts=()
+def display_contacts():
+    print("Here is your contact",end="\n")
+    for (name,mbl) in zip(contacts,items()):
+        print(name,mbl,sep=":")
+# print contacts
+def add_contact(name,mbl):
+    if name not in contacts:
+        contacts[name]=mbl
+        print("contact added....!")
+    else:print(name,"already exists")
+#add_contact(input("Name:")),int(input("Mobile Num:"))
+def edit_contact(name):
+    if name in contacts:
+        new=int(input("New mobile number:"))
+        contacts[name]=new
+        print("contact updated...!")
+    else:
+        print(name,"doesn't exists")
+#edit_contact
+def search_contact(name):
+    if name in contacts:
+        print("your contacts",end=":")
+        print(name,contacts[name])
+    else:print(name,"doesn't exists")

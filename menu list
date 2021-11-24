@@ -1,0 +1,22 @@
+class Food(object):
+    def __init__(self, item, price):
+        self.item = item
+        self.price = price
+    
+    def getprice(self):
+        return self.price
+    
+    def __str__(self):
+        return self.item + ' : ' + str(self.getprice())   
+def buildmenu(items, costs):
+    menu = []
+    for i in range(len(items)):
+        menu.append(Food(items[i], costs[i]))
+    return menu
+items = ['egg fried rice', 'chicken fried rice', 'Pizza', 'Burger', 'Fries', 'cheese pop corn', 'singapore rice ', 'karthik special rice']
+prices= [250, 150, 180, 70, 65, 55, 120, 650]
+Foods = buildmenu(items, prices)
+n = 1
+for el in Foods:
+    print(n,'. ', el)
+    n = n + 1
